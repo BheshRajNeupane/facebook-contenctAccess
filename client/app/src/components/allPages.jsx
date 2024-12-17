@@ -5,16 +5,18 @@ export function AllPage() {
   const [allPage, setAllPage] = useState(null); // Stores all pages
   const [page, setPage] = useState(null); // Stores the selected page
 
-  const all_pages = `${
-    import.meta.env.VITE_APP_META_URL
-  }/me/accounts?access_token=${
-    import.meta.env.VITE_APP_Palm_mind_dev_Access_Token
-  }`;
+  // const all_pages = `${
+  //   import.meta.env.VITE_APP_META_URL
+  // }/me/accounts?access_token=${
+  //   import.meta.env.VITE_APP_Palm_mind_dev_Access_Token
+  // }`;
 
   useEffect(() => {
     async function fetchAllPages() {
       try {
-        const pages = await fetch(all_pages);
+        // const pages = await fetch(all_pages);
+        const pages = await fetch('http://127.0.0.1:3000/all-pages');
+        
         const allpagesData = await pages.json();
         setAllPage(allpagesData.data); // Set fetched page data
       } catch (err) {

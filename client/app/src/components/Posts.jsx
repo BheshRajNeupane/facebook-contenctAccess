@@ -6,16 +6,19 @@ export function Posts({ selectedPage }) {
   const [selectedPost, setSelectedPost] = useState(null); // Selected post
   const [isOpen, setIsOpen] = useState(false); // Sidebar toggle state
 
-  const posts_url = `${import.meta.env.VITE_APP_META_URL}/${
-    import.meta.env.VITE_APP_GRAPH_VERSION
-  }/${selectedPage.id}/posts?fields=id,message&access_token=${
-    selectedPage.access_token
-  }`;
+  // const posts_url = `${import.meta.env.VITE_APP_META_URL}/${
+  //   import.meta.env.VITE_APP_GRAPH_VERSION
+  // }/${selectedPage.id}/posts?fields=id,message&access_token=${
+  //   selectedPage.access_token
+  // }`;
+  const posts_url = `http://127.0.0.1:3000/posts/${selectedPage.id}?token=${selectedPage.access_token}`;
 
   useEffect(() => {
     async function fetchPosts() {
       try {
         const postDetails = await fetch(posts_url);
+       
+
         const postData = await postDetails.json();
         setPosts(postData.data || []);
       } catch (err) {

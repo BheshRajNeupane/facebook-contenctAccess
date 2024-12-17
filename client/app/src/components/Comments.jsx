@@ -4,14 +4,15 @@ export function Comments({ selectedPage, selectedPostId }) {
   const [comments, setComments] = useState([]);
   const [nextPage, setNextPage] = useState(null);
   const [prevPage, setPrevPage] = useState(null);
-  const limit = 1;
+  // const limit = 2;
 
-  const comments_url = `${import.meta.env.VITE_APP_META_URL}/${
-    import.meta.env.VITE_APP_GRAPH_VERSION
-  }/${selectedPostId}/comments?limit=${limit}&fields=id,message&access_token=${
-    selectedPage.access_token
-  }`;
-
+  
+  // const comments_url = `${import.meta.env.VITE_APP_META_URL}/${
+  //   import.meta.env.VITE_APP_GRAPH_VERSION
+  // }/${selectedPostId}/comments?limit=${limit}&fields=id,message&access_token=${
+  //   selectedPage.access_token
+  // }`;
+  const comments_url = `http://127.0.0.1:3000/${selectedPostId}/comments?token=${selectedPage.access_token}`;
   async function getComments(url) {
     try {
       const commentsDetails = await fetch(url);
