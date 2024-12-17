@@ -6,7 +6,6 @@ export function Comments({ selectedPage, selectedPostId }) {
   const [prevPage, setPrevPage] = useState(null);
   // const limit = 2;
 
-  
   // const comments_url = `${import.meta.env.VITE_APP_META_URL}/${
   //   import.meta.env.VITE_APP_GRAPH_VERSION
   // }/${selectedPostId}/comments?limit=${limit}&fields=id,message&access_token=${
@@ -20,6 +19,8 @@ export function Comments({ selectedPage, selectedPostId }) {
 
       // Update comments and pagination URLs
       setComments(commentsData.data || []);
+     
+
       setNextPage(commentsData.paging?.next || null);
       setPrevPage(commentsData.paging?.previous || null);
     } catch (error) {
@@ -60,21 +61,24 @@ export function Comments({ selectedPage, selectedPostId }) {
 
       {/* Pagination Controls */}
       <div className="mt-4 flex justify-between">
-        <button
-          onClick={() => getComments(prevPage)}
-          disabled={!prevPage}
-          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-        >
-          Previous
-        </button>
+        {prevPage && (
+          <button
+            onClick={() => getComments(prevPage)}
+            // disabled={!prevPage}
+            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          >
+            Previous
+          </button>
+        )}
 
-        <button
+       { nextPage && ( <button
           onClick={() => getComments(nextPage)}
-          disabled={!nextPage}
+          // disabled={!nextPage}
           className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
         >
           Next
-        </button>
+        </button>)
+        }
       </div>
     </div>
   );
