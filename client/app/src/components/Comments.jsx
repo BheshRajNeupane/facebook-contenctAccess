@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 
+// eslint-disable-next-line react/prop-types
 export function Comments({ selectedPage, selectedPostId }) {
   const [comments, setComments] = useState([]);
   const [nextPage, setNextPage] = useState(null);
@@ -74,7 +75,7 @@ export function Comments({ selectedPage, selectedPostId }) {
        { nextPage && ( <button
           onClick={() => getComments(nextPage)}
           // disabled={!nextPage}
-          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 ml-auto"
         >
           Next
         </button>)

@@ -38,7 +38,7 @@ export function Posts({ selectedPage }) {
       {/* Sidebar Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-4 left-4 z-20 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="fixed top-4 left-2 z-20 p-3 bg-blue-600  text-white rounded-3xl shadow-lg  hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
       >
         {isOpen ? "Close" : "Posts"}
       </button>
@@ -47,7 +47,7 @@ export function Posts({ selectedPage }) {
       <div
         className={`fixed top-0 left-0 h-screen bg-gradient-to-b from-blue-600 to-purple-700 text-white shadow-lg transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } w-64 transition-transform duration-300 ease-in-out`}
+        } w-64 transition-transform duration-300 ease-in-out  z-10`}
       >
         {/* Sidebar Header */}
         <div className="px-6 py-4 bg-blue-800 text-lg font-bold text-center">

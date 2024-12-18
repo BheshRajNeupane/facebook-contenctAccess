@@ -47,7 +47,7 @@ export function AllPage() {
                 <button
                   key={page.id}
                   onClick={() => handlePageClick(page)} // Pass the selected page on click
-                  className="w-full text-left p-4 bg-gray-100 rounded-lg shadow-md border border-gray-300 hover:shadow-lg hover:border-gray-400 transition duration-300"
+                  className="w-full text-left p-4 bg-gray-100 rounded-lg shadow-md border hover:shadow-lg hover:border-gray-400 transition duration-300"
                 >
                   <h4 className="text-lg font-semibold text-gray-700">
                     {page.name}
