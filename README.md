@@ -8,6 +8,7 @@ This application allows users to:
 - View all Facebook pages linked to their account
 - Access and analyze posts from each page
 - Monitor and analyze comments on each post
+- Pagination (comments)
 
 
 ## Technology Stack
