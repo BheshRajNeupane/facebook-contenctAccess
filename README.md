@@ -28,31 +28,27 @@ This application allows users to:
 
 ### Prerequisites
 - Node.js v14 or higher
-- MongoDB installed and running
 - Facebook Developer Account
 - Meta Graph API access credentials
 
 ### Installation
 
-1. Clone the repository
-```bash
-git clone https://github.com/yourusername/facebook-analytics-platform.git
-cd facebook-analytics-platform
+
 ```
 
-2. Install backend dependencies
+1. Install backend dependencies
 ```bash
 cd backend
 npm install
 ```
 
-3. Install frontend dependencies
+2. Install frontend dependencies
 ```bash
 cd frontend
 npm install
 ```
 
-4. Configure environment variables:
+3. Configure environment variables:
 
 Create `backend/.env`:
 ```env
